@@ -1,0 +1,28 @@
+{
+  "name": "lambda-url-to-html",
+  "version": "1.0.0",
+  "description": "Example of a Typescript AWS Lambda function",
+  "main": "index.js",
+  "scripts": {
+    "build": "lambda-build archive -e index.ts",
+    "deploy": "lambda-build upload -r us-east-1 lambda-url-to-html",
+    "test": "mocha --recursive 'test' --extension ts --exit --require esbuild-register --timeout 20000"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.130",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.10.5",
+    "@types/sinon": "^17.0.3",
+    "esbuild-register": "^3.5.0",
+    "lambda-build": "^1.0.6",
+    "mocha": "^10.2.0",
+    "sinon": "^17.0.1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.490.0",
+    "axios": "^1.6.5",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}

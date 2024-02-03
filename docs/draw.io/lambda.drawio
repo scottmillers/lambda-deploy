@@ -1,0 +1,66 @@
+<mxfile host="65bd71144e">
+    <diagram id="a7g8ZhUu8bfuYHfYpA98" name="LambdaPrototype">
+        <mxGraphModel dx="1976" dy="730" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="hlzm3OFjWWuktmjhIEz7-43" value="Lambda&lt;br style=&quot;font-size: 14px;&quot;&gt;" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" parent="1" vertex="1">
+                    <mxGeometry x="623" y="504" width="79" height="79" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=classic;endFill=1;fontSize=14;" parent="1" source="hlzm3OFjWWuktmjhIEz7-43" target="60" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="201" y="389.5" as="sourcePoint"/>
+                        <mxPoint x="255" y="392" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="73" value="2. Get HTML Page" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="54" vertex="1" connectable="0">
+                    <mxGeometry x="0.1338" y="3" relative="1" as="geometry">
+                        <mxPoint x="-5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" value="S3 Bucket" style="outlineConnect=0;dashed=0;verticalLabelPosition=top;verticalAlign=bottom;align=center;html=1;shape=mxgraph.aws3.s3;fillColor=#E05243;gradientColor=none;fontSize=14;labelPosition=center;" parent="1" vertex="1">
+                    <mxGeometry x="623" y="147" width="76.5" height="93" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="https://example.com" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/web_server.svg;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="919" y="517" width="92.8" height="116" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.user;" parent="1" vertex="1">
+                    <mxGeometry x="73" y="316" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=classic;endFill=1;" parent="1" source="hlzm3OFjWWuktmjhIEz7-43" target="59" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="736" y="369.5" as="sourcePoint"/>
+                        <mxPoint x="680" y="181" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="75" value="3. Store HTML Page &lt;br style=&quot;font-size: 14px;&quot;&gt;example.html" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="74" vertex="1" connectable="0">
+                    <mxGeometry x="0.1338" y="3" relative="1" as="geometry">
+                        <mxPoint x="2" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="76" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="156" y="344.03" as="sourcePoint"/>
+                        <mxPoint x="609" y="220.00251908396947" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="77" value="4. Access the HTML in S3&lt;br style=&quot;font-size: 14px;&quot;&gt;https://bucket.s3.amazonaws.com/example.html" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="76" vertex="1" connectable="0">
+                    <mxGeometry x="0.4349" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-127" y="15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="87" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;exitX=0.975;exitY=0.908;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="68" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="166" y="354.03" as="sourcePoint"/>
+                        <mxPoint x="619" y="531" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="88" value="1.&amp;nbsp; Call Lambda URL with a query string&lt;br style=&quot;font-size: 14px;&quot;&gt;https://abc.lambda-url.us-east-1.on.aws/?url=https://website.com&amp;amp;name=filename" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="87" vertex="1" connectable="0">
+                    <mxGeometry x="0.4349" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-171" y="-32" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
