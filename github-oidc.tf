@@ -21,7 +21,7 @@ resource "aws_iam_role" "github_actions_role" {
         }
         Condition = {
           StringEquals = {
-            "${aws_iam_openid_connect_provider.github_oidc.url}:sub" = "repo:YOUR_GITHUB_ORG/YOUR_REPO:ref:refs/heads/YOUR_BRANCH"
+            "${aws_iam_openid_connect_provider.github_oidc.url}:sub" = "repo:scottmillers/lambda-deploy:ref:refs/heads/main"
           }
         }
       },
