@@ -4,6 +4,8 @@
 name: Lambda url-to-html
 on:
   push:
+    paths:
+      - 'src/**'
 env:
   AWS_REGION : "us-east-1"
   AWS_ROLE_ARN : "arn:aws:iam::588459062833:role/GitHubActionsRole"
@@ -35,12 +37,12 @@ jobs:
         CI: true
       run: |
         npm ci 
-        working-directory: "src"
+      working-directory: "src"
     - name: Run the tests
       run: |
         npm test
-        working-directory: "src"
+      working-directory: "src"
     - name: deploy
       run: |
         npm run deploy
-        working-directory: "src"
+      working-directory: "src"
