@@ -1,0 +1,50 @@
+
+# Workflow to access AWS resources when workflow is tied to branch
+# The workflow Creates static website using aws s3
+name: Lambda url-to-html
+on:
+  push:
+env:
+  AWS_REGION : "us-east-1"
+  AWS_ROLE_ARN : "arn:aws:iam::588459062833:role/GitHubActionsRole"
+# permission can be added at job level or workflow level
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: read    # This is required for actions/checkout
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+   # this doesn't work
+   # defaults:
+   #   run:
+   #     working-directory: "aws/lambda/url-to-html/src/"
+    steps:
+    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+    - run: echo "The working directory is ${{ github.workspace }}"
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+         role-to-assume: ${{ env.AWS_ROLE_ARN }}
+         role-session-name: samplerolesession
+         aws-region: ${{ env.AWS_REGION }}
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: npm ci
+      env:
+        CI: true
+      run: |
+        npm ci 
+      working-directory: "src"
+    - name: Run the tests
+      run: |
+        npm test
+      working-directory: "src"
+    - name: deploy
+      run: |
+        npm run deploy
+      working-directory: "src"
